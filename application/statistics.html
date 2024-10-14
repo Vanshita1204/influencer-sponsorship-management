@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monthly Report</title>
+</head>
+<body>
+  <div>
+    {% if source == 'platform' %}
+      <h2>Platform Statistics</h2>
+      <ul>
+        <li>Total Users: {{ platform_statistics.total_users }}</li>
+        <li>Total Influencers: {{ platform_statistics.total_influencers }}</li>
+        <li>Total Sponsors: {{ platform_statistics.total_sponsors }}</li>
+        <li>Total Campaigns: {{ platform_statistics.total_campaigns }}</li>
+        <li>Total Ad Requests: {{ platform_statistics.total_ad_requests }}</li>
+        <li>Average Campaign Duration: {{ platform_statistics.average_campaign_duration }}</li>
+        <li>Monthly Active Users: {{ platform_statistics.monthly_active_users }}</li>
+        <li>Campaign Verification Rate: {{ platform_statistics.campaign_verification_rate }}</li>
+        <li>Ad Request Acceptance Rate: {{ platform_statistics.ad_request_acceptance_rate }}</li>
+        <li>Growth Rate: {{ platform_statistics.growth_rate }}</li>
+      </ul>
+    {% elif source == 'sponsor' %}
+      <h2>Sponsor Statistics</h2>
+      <ul>
+        <li>Accepted Ad Requests: {{ sponsor_statistics.accepted_ad_requests }}</li>
+        <li>Rejected Ad Requests: {{ sponsor_statistics.rejected_ad_requests }}</li>
+        <li>Average Amount Offered: {{ sponsor_statistics.average_amount_offered }}</li>
+        <li>Total Ad Requests: {{ sponsor_statistics.total_ad_requests_received }}</li>
+        <li>Total Amount Spent: {{ sponsor_statistics.total_amount_spent }}</li>
+        <li>Total Budget Utilized: {{ sponsor_statistics.total_budget_utilized }}</li>
+        <li>Total Campaigns: {{ sponsor_statistics.total_campaigns }}</li>
+      </ul>
+    {% elif source == 'influencer' %}
+      <h2>Influencer Statistics</h2>
+      <ul>
+        <li>Accepted Ad Requests: {{ influencer_statistics.accepted_ad_requests }}</li>
+        <li>Rejected Ad Requests: {{ influencer_statistics.rejected_ad_requests }}</li>
+        <li>Total Ad Requests: {{ influencer_statistics.total_ad_requests }}</li>
+        <li>Average Amount Offered: {{ influencer_statistics.average_amount_offered }}</li>
+        <li>Average Amount Requested: {{ influencer_statistics.average_amount_requested }}</li>
+        <li>Campaign Success Rate: {{ influencer_statistics.campaign_success_rate }}</li>
+        <li>Total Campaigns Interacted With: {{ influencer_statistics.total_campaigns_participated }}</li>
+        <li>Total Earnings: {{ influencer_statistics.total_earnings }}</li>
+      </ul>
+    {% endif %}
+  </div>
+</body>
+</html>
